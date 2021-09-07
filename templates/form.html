@@ -1,0 +1,26 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Word Dictionary</h1>
+
+        <form action='/submit' method='post'>
+            <textarea name="text" rows="4" cols="50">Enter word here...</textarea>
+
+            <button type='submit'>Search</button>
+        </form>
+
+        <div class="col-md-6">
+            <h5 class="text-blue text-center">Definations: </h5>
+            <div class="alert alert-primary" role="alert"> 
+                <ul id="navigation">
+                    {% for item in data %}
+                        <li><a href="{{ item.href }}">{{ data[loop.index0] }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        
+    </body>
+</html>
